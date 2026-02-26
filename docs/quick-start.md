@@ -2,15 +2,19 @@
 
 ## Basic Setup
 
-1. Open your avatar in Unity.
-2. Open InertiaBones from the Unity menu.
-3. Click **Scan** to detect eligible bones.
-4. Select bones you want to convert.
-5. Choose **Session Mode** for testing.
-6. Click **Apply**.
-7. Tune PhysBone parameters.
-8. When satisfied, switch to **Persist Mode**.
-9. Click **Apply** to bake a mesh asset.
+1. Open your Unity avatar project.
+2. Open InertiaBones from the Tools menu.
+3. Select the avatar you want to convert on by dragging it into **Avatar Root**.
+4. Select bones on your avatar you want to convert by dragging them into **Source Bone**.
+5. Choose a BuiltIn preset or make your own.
+6. Click **Apply** and use play-mode to see the results.
+6. Redo the steps above until you are satisfied with the setup.
+7. When satisfied, make sure to use **Scan & Fill** to target all controllers, then switch on **Bake converted meshes as assets**.
+8. Click **Apply** to bake the affected meshes into assets that are prefab safe and survives reopening projects and similar.
+9. Done!
+
+!!! info
+    InertiaBones is meant to be used as a **final** pass on your avatar before uploading. If you use any other tools that make changes to mesh / armature or similar, make sure to use them before applying InertiaBones.
 
 ---
 
@@ -23,8 +27,6 @@ frameborder="0"
 allowfullscreen>
 </iframe>
 
-*(Replace with your video URL once uploaded.)*
-
 ---
 
 ## Recommended Workflow
@@ -35,7 +37,7 @@ allowfullscreen>
 - Adjust settings without creating assets
 
 **When finalized:**
-- Switch to Persist Mode
+- Switch to Bake Mode
 - Apply once to bake
 - Let retention cleanup manage older versions
 
@@ -46,8 +48,5 @@ allowfullscreen>
 !!! warning
     Persist Mode creates new mesh assets. It never overwrites existing ones.
 
-!!! tip
-    Use Scan & Fill if you modify controllers manually outside the tool.
-
 !!! info
-    Removing controllers in Persist Mode will trigger a safety warning if vertex influence still exists.
+    Omitting controllers in Bake Mode will trigger a safety warning if vertex influence still exists.

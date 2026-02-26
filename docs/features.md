@@ -2,12 +2,12 @@
 
 ## Controller Generation
 
-For each source bone:
+For each source bone in list when applying:
 
 
-PBCTRL_<Source>
-└── <Source>_Sim
-└── <Source>_Jiggle
+PBCTRL_<Source> (Holds the Constraint setup)
+	<Source>_Sim (Holds the PB component)
+		<Source>_Jiggle (Holds the rewritten weight)
 
 
 - Deterministic naming
@@ -18,7 +18,7 @@ PBCTRL_<Source>
 
 ## Session Mode
 
-- Instantiates working mesh
+- Instantiates working mesh (In-memory)
 - No asset creation
 - Fully reversible
 - Safe for rapid iteration
@@ -32,9 +32,8 @@ Recommended for parameter tuning.
 - Always rebuilds from pristine backup
 - Creates brand-new mesh asset
 - Never overwrites existing mesh
-- Uses timestamped deterministic naming
-- Wrapped in StartAssetEditing
-- Safe delayed cleanup
+- Meshes use timestamped naming to support cleanup.
+- Safe delayed cleanup (Configurable in **Options**)
 
 Persist is immutable output generation.
 
@@ -47,7 +46,7 @@ A hidden object under the avatar stores:
 - Original mesh
 - Original bones
 - Original root bone
-- Relative SMR path
+- Relative SkinnedMeshRenderer path
 
 Used for:
 
@@ -88,7 +87,7 @@ Retention options:
 
 Cleanup:
 
-- Groups baked meshes by SMR hash
+- Groups baked meshes by SkinnedMeshRenderer hash
 - Sorts by timestamp
 - Deletes oldest beyond retention
 - Never deletes referenced meshes
