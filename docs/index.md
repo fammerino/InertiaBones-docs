@@ -12,6 +12,7 @@ It features:
 - Automatic baked mesh cleanup
 
 It is designed to serve as a framework for current and future methods included in the tool, so that you can easily add PhysBone dynamics wherever you want.
+
 ---
 
 ## Important Notes
