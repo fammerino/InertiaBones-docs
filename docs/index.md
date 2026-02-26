@@ -18,6 +18,7 @@ It is designed to serve as a framework for current and future methods included i
 ## Important Notes
 
 This tool does not do anything revolutionary by itself, you could manually do this to your avatar already, but considering the time it would take and the potential complexity of replacing weights on meshes directly in Unity can make it an arduous task.
+
 By using InertiaBones you can bypass all of that by making complex setups in seconds, and iterate / tune everything in a safe environment before finalizing your setup and baking it into meshes so that your avatar is prefab-safe and can also be exported.
 
 InertiaBones is built with numerous guardrails in place so that you can safely experiment with different setups.
@@ -36,9 +37,9 @@ The tool:
 
 For each source bone, InertiaBones creates:
 
-PBCTRL_<Source>
-└── <Source>_Sim
-└── <Source>_Jiggle
+PBCTRL_*Source*
+	*Source*_Sim
+		*Source*_Jiggle
 
 Mesh weights are redirected:
 

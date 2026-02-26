@@ -1,13 +1,15 @@
-# Features
+# Tool System Features
 
 ## Controller Generation
 
 For each source bone in list when applying:
 
 
-PBCTRL_<Source> (Holds the Constraint setup)
-	<Source>_Sim (Holds the PB component)
-		<Source>_Jiggle (Holds the rewritten weight)
+PBCTRL_*Source* (Holds the Constraint setup)
+
+	*Source*_Sim (Holds the PB component)
+
+		*Source*_Jiggle (Holds the rewritten weight)
 
 
 - Deterministic naming
@@ -104,7 +106,7 @@ Cleanup:
 
 ### Deterministic Rebuild
 
-Persist always derives from backup, ensuring:
+Persist (Bake) always derives from backup, ensuring:
 
 - No cumulative corruption
 - Stable bindpose integrity
