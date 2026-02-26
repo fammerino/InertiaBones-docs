@@ -1,0 +1,17 @@
+site_name: InertiaBones
+site_description: Deterministic PhysBone controller generation and crash-safe mesh baking for VRChat avatars
+repo_url: https://github.com/fammerino/InertiaBones-docs
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.follow
+    - search.suggest
+
+nav:
+  - Home: index.md
+  - Quick Start: quick-start.md
+  - Modes: modes.md
+  - Safety & Invariants: safety.md
+  - Troubleshooting: troubleshooting.md
