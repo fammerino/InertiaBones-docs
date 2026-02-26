@@ -15,7 +15,8 @@ theme:
 nav:
   - Introduction: index.md
   - Quick Start: quick-start.md
-  - Features: features.md
+  - Configuration: configuration.md
+  - System Features: features.md
   - FAQ: faq.md
   - Contact: contact.md
   - License: license.md
