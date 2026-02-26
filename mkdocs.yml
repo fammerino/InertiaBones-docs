@@ -20,6 +20,7 @@ nav:
   - FAQ: faq.md
   - Contact: contact.md
   - License: license.md
+  - Known Issues: issues.md
 
 markdown_extensions:
   - admonition
