@@ -5,9 +5,9 @@
 For each source bone in list when applying:
 
 
-PBCTRL_*Source* (Holds the Constraint setup)
-	*Source*_Sim (Holds the PB component)
-		*Source*_Jiggle (Holds the rewritten weight)
+PBCTRL_Source (Holds the Constraint setup)
+   Source_Sim (Holds the PB component)
+      Source_Jiggle (Holds the rewritten weight)
 
 
 - Deterministic naming

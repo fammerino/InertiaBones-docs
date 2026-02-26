@@ -2,7 +2,7 @@
 
 ## UI Explanation
 
-![UI Screenshot](assets/UIScreenshot.png)
+![UI Screenshot](docs/assets/UIScreenshot.png)
 
 ### Header buttons:
 
