@@ -4,11 +4,11 @@
 
 For each source bone in list when applying:
 
-
-PBCTRL_Source (Holds the Constraint setup)
-   Source_Sim (Holds the PB component)
-      Source_Jiggle (Holds the rewritten weight)
-
+```
+PBCTRL_SourceBone (Holds the Constraint setup)
+└── SourceBone_Sim (Holds the PB component)
+    └── SourceBone_Jiggle (Holds the rewritten weight)
+```
 
 - Deterministic naming
 - Idempotent rebuild

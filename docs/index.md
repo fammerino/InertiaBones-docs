@@ -37,9 +37,11 @@ The tool:
 
 For each source bone, InertiaBones creates:
 
-PBCTRL_*Source*
-	*Source*_Sim
-		*Source*_Jiggle
+```
+PBCTRL_SourceBone
+└── SourceBone_Sim
+    └── SourceBone_Jiggle
+```
 
 Mesh weights are redirected:
 

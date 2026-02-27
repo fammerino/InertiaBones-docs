@@ -21,6 +21,7 @@ nav:
   - Contact: contact.md
   - License: license.md
   - Known Issues: issues.md
+  - Changelog: changelog.md
 
 markdown_extensions:
   - admonition

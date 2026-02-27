@@ -6,7 +6,7 @@
 
 ### Header buttons:
 
-- Docs: takes you here
+- Docs: takes you to the page you are currently on.
 - Options: where global settings will be placed
 
 ### Avatar Root / Bones section
@@ -50,7 +50,7 @@ Currently, the different Built In presets are categorized between *Rotational* a
 	Testing showed that the length of the endpoint can affect the final PhysBone jiggle (Especially very short lengths)
 
 - Endpoint Position: Self-explanatory, but do note that they should be extended from X if working with **Hinge Axis**: Y, this is required for the Hinge Limit to function properly.
-- Endpoint X Sign Mode: simple setting for choosing whether endpoints should be **Mirrored**, **Inverted** or **Manual**.
+- Endpoint X Sign Mode: simple setting for choosing whether endpoints should be **Mirrored**, **Inverted** or **Manual** (previewable with Gizmo preview).
 
 ### Dynamics (Base)
 
@@ -75,12 +75,12 @@ This will apply the changes to a duplicated copy of your avatar, instead of appl
 ### Reset UI / Run
 
 - Reset UI (Session): resets the UI to its default state.
-- Run -mode-conditional- : Runs the operations and applies the changes,
+- Run *Apply* or *Remove* (Depending on which Mode is selected) : Runs the operations and applies the changes,
 
 ### Debug / Maintenance
 
 Small foldout on the bottom of the UI for debugging or maintaining tool backup and similar.
 
-- Clean Old Baked Meshes (Keep Last 2): will delete all GeneratedMeshes for the currently selected avatar so long as they are not in use and older than 2.
+- Clean Old Baked Meshes (Keep Last 2): will delete all GeneratedMeshes for the currently selected avatar so long as they are not in use (i.e not referenced by **any** SkinnedMeshRenderer) and older than 2.
 
 
