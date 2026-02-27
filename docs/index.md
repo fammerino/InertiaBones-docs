@@ -11,17 +11,22 @@ It features:
 - Influence loss protection
 - Automatic baked mesh cleanup
 
-It is designed to serve as a framework for current and future methods included in the tool, so that you can easily add PhysBone dynamics wherever you want.
+The tool is designed to serve as a framework for current and future methods included in the tool, so that you can easily add PhysBone dynamics wherever you want.
+
+[Get started →](quick-start.md){ .md-button .md-button--primary }
+[Configuration →](configuration.md){ .md-button }
 
 ---
 
 ## Important Notes
 
-This tool does not do anything revolutionary by itself, you could manually do this to your avatar already, but considering the time it would take and the potential complexity of replacing weights on meshes directly in Unity can make it an arduous task.
+While the underlying techniques used by InertiaBones are technically achievable manually, performing them correctly inside Unity is time-consuming, error-prone, and difficult to iterate safely — especially when modifying mesh weights directly.
 
-By using InertiaBones you can bypass all of that by making complex setups in seconds, and iterate / tune everything in a safe environment before finalizing your setup and baking it into meshes so that your avatar is prefab-safe and can also be exported.
+InertiaBones streamlines this entire workflow.
 
-InertiaBones is built with numerous guardrails in place so that you can safely experiment with different setups.
+It allows you to generate complex controller setups in seconds, iterate and tune them in a non-destructive environment, and only finalize your configuration once you are satisfied. When ready, you can bake the result into clean mesh assets so your avatar remains prefab-safe and export-ready.
+
+The tool is built with multiple guardrails to ensure deterministic behavior and safe experimentation, allowing you to explore advanced setups without risking mesh corruption or structural instability.
 
 The tool:
 

@@ -2,13 +2,16 @@
 
 ## Known Issues
 
+### Unpacking prefabs or modifying armatures after applying the tool
+
 !!! warning
-	Beware of unpacking prefabs on converted avatars after you run **Apply**
+	Avoid unpacking prefabs or manually editing armatures on avatars that have already been processed with **Apply**, unless you understand how the backup system works.
 
-We previously saw an issue regarding **unpack prefab** on outfits or similar, that would cause the *Backup entries* in the hidden _InertiaBonesData object to lose their backup path and or bone list, which in turn caused problems like meshes not returning to normal when running **Remove** 
+Earlier versions exposed an edge case where unpacking prefabs (for example, outfit prefabs) could invalidate (partially break) stored backup references inside the hidden *__InertiaBonesEditorData* object. In certain situations, this prevented meshes from restoring correctly when running Remove.
 
-This issue should be resolved, but considering that this workflow is non-standard and **not** the intended order of use for the tool, I am noting it down here. 
-(new methods ensure that a clean set of backup entires exist, and a button in the **Debug / Maintenance** foldout has been added that has proven very efficient at repairing this issue if it happens)
+This behavior has since been addressed. New safeguards ensure that backup entries remain consistent, and a repair button is available in the Debug / Maintenance foldout to rebuild backup data if necessary.
+
+However, unpacking prefabs or manually restructuring the armature after applying the tool is not the intended workflow and may require manual review.
 
 ---
 
@@ -32,8 +35,10 @@ If `Belt_PB_R` has its own PhysBone component and is weighted accordingly, motio
 This limitation is planned for future improvement.
 
 !!! info
-	Until this is properly implemented, a workaround is to manually parent those PB-bonechains to the _Jiggle bone of their respective controller.
-	Do be warned that this is a manual workaround and will likely break the outfit if you **Run Remove** without manually undoing the workaround first.
+	Until this is properly implemented, a workaround is to manually parent those PB-bonechains to the _Jiggle bone of their respective controller, but **Read the warning below first**.
+
+!!! warning
+	This is a manual workaround and is directly tied to the edge-case shown above (under **Known Issues**). Make sure to have a **backup** of your avatar or work on a **_Upload** copy if you are using this workaround, as it is not the intended workflow.
 
 ---
 

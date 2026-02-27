@@ -1,5 +1,13 @@
 # Tool System Features
 
+## Compatibility
+
+Initial compatibility testing with *Marshmallow PB* suggests strong compatibility. Other tools like Motchiri Shader and BPP / BPPP should also work fine, although it has not yet been fully tested.
+
+!!! info
+	Regarding compatibility, the bottom line is to make sure you utilize any tools doing operations on mesh/armature **before** using InertiaBones.
+
+
 ## Controller Generation
 
 For each source bone in list when applying:

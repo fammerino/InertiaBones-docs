@@ -4,6 +4,22 @@ repo_url: https://github.com/fammerino/InertiaBones-docs
 
 theme:
   name: material
+  logo: assets/brand/logo.png
+  favicon: assets/brand/favicon.png
+  palette:
+    - scheme: default
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.tabs
     - navigation.sections
@@ -11,6 +27,19 @@ theme:
     - toc.follow
     - search.suggest
     - content.code.copy
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/kzq_vr
+    - icon: fontawesome/solid/cart-shopping
+      link: https://a2x4.booth.pm/
 
 nav:
   - Introduction: index.md
@@ -18,12 +47,15 @@ nav:
   - Configuration: configuration.md
   - System Features: features.md
   - FAQ: faq.md
+  - Known Issues: issues.md
   - Contact: contact.md
   - License: license.md
-  - Known Issues: issues.md
   - Changelog: changelog.md
 
 markdown_extensions:
   - admonition
+  - attr_list
   - toc:
       permalink: true
+  - pymdownx.details
+  - pymdownx.superfences

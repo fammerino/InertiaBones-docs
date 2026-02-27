@@ -7,9 +7,22 @@ Persist Mode never overwrites existing mesh assets.
 
 ---
 
+## Can I use this if I already have thigh / belly / butt PhysBones?
+
+Yes.
+
+InertiaBones adds controller chains only to the bones you explicitly select and does not remove or overwrite existing PhysBone setups. Existing PhysBone components, constraints, and child chains remain intact.
+
+The tool has been tested on complex multi-bone thigh, belly, and butt rigs and integrates cleanly, often enhancing overall motion when tuned properly.
+
+Only the bones you choose to convert are affected.
+
+!!! note
+	This behavior assumes your existing PhysBone setups are located directly under the avatar’s root armature at the time of applying. Unusual hierarchy structures may require manual review. 
+
 ## How can I remove everything from my avatar?
 
-Simply change the mode to **Remove** and use **Scan & Fill Existing Controllers**, then **Run Remove**
+Simply change the mode to **Remove** and use **Scan & Fill Existing Controllers**, then run **Remove**.
 This will remove all objects created by the tool, write weights back to the source bones and change mesh references back to their original.
 
 ---
@@ -29,7 +42,7 @@ If removed controllers still influence vertex weights, a warning appears.
 
 You can:
 - Cancel
-- Scan & Fill existing controllers
+- Scan & Fill existing controllers (Then **remove** properly)
 - Run Anyway
 
 ---

@@ -1,0 +1,97 @@
+/* Slightly tighter header spacing */
+.md-content h1 { margin-bottom: 0.6em; }
+.md-content h2 { margin-top: 1.6em; }
+
+/* Make the homepage feel more like a product landing */
+.md-content__inner > h1 + p strong { font-size: 1.05em; }
+
+/* Slightly round images */
+.md-content img { border-radius: 12px; }
+
+/* Increase logo size */
+.md-header__button.md-logo img {
+    height: 60px;   /* default is ~24px */
+}
+
+/* ========== BRAND COLOR VARIABLES ========== */
+/* Apply for both light and dark schemes */
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #ff004e;
+  --md-accent-fg-color--transparent: rgba(255, 0, 78, 0.12);
+}
+
+/* Primary button container */
+.md-typeset .md-button--primary {
+  background-color: #ff004e;
+  border-color: #ff004e;
+}
+
+/* Primary button text/link */
+.md-typeset .md-button--primary,
+.md-typeset .md-button--primary:link,
+.md-typeset .md-button--primary:visited,
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  color: #ffffff !important;
+}
+
+/* Hover */
+.md-typeset .md-button--primary:hover {
+  background-color: #d60042 !important;
+  border-color: #A30034;
+}
+
+.md-typeset .md-button {
+  border-color: #ff004e;
+  color: #ff004e !important;
+}
+
+.md-typeset .md-button:hover {
+  background-color: rgba(255, 0, 78, 0.08);
+  border-color: #A30034;
+}
+
+/* Active sidebar link */
+.md-nav__link--active {
+  color: #ff004e !important;
+  font-weight: 600;
+}
+
+/* Admonition body */
+.md-typeset .admonition {
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+/* Admonition title */
+.md-typeset .admonition > .admonition-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Body text */
+.md-typeset .admonition p {
+  font-weight: 500;
+}
+
+.md-typeset .admonition {
+  padding: 0.5rem 1.1rem;
+}
+
+/* H1 slightly stronger */
+.md-typeset h1 {
+  font-weight: 600;
+}
+
+/* H2 accent underline */
+.md-typeset h2 {
+  font-weight: 650;
+  border-bottom: 2px solid #ff004e;
+  padding-bottom: 0.3rem;
+}
+
+/* H3 slightly stronger */
+.md-typeset h3 {
+  font-weight: 600;
+}
