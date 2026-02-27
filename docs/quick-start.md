@@ -9,7 +9,7 @@ If you are new to InertiaBones, it is recommended to:
 
 This is simply good workflow practice when introducing any new automation tool into an existing avatar setup.
 
-While InertiaBones is designed to be deterministic and crash-safe, creating a backup during your first use ensures you can freely experiment and become familiar with its behavior without concern.
+While InertiaBones is designed to be consistent and crash-safe, creating a backup during your first use ensures you can freely experiment and become familiar with its behavior without concern.
 
 Once you are comfortable with the workflow, this precaution is typically unnecessary.
 

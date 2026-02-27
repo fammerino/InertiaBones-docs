@@ -18,8 +18,8 @@ PBCTRL_SourceBone (Holds the Constraint setup)
     └── SourceBone_Jiggle (Holds the rewritten weight)
 ```
 
-- Deterministic naming
-- Idempotent rebuild
+- Consistent naming
+- Safe to run multiple times without stacking or duplication of controllers
 - Existing controllers detectable via scan
 
 ---
@@ -43,7 +43,7 @@ Recommended for parameter tuning.
 - Meshes use timestamped naming to support cleanup.
 - Safe delayed cleanup (Configurable in **Options**)
 
-Persist is immutable output generation.
+Persist is immutable output in that sense.
 
 ---
 
@@ -58,7 +58,7 @@ A hidden object under the avatar stores:
 
 Used for:
 
-- Deterministic rebuild
+- Predictable rebuild
 - Influence detection
 - Restore
 - Corruption prevention
@@ -72,7 +72,7 @@ When removing controllers in Persist Mode:
 - Existing controllers are scanned
 - Omitted controllers are detected
 - Influence is checked via pristine backup
-- Warning modal appears if risk detected
+- Warning message (modal) appears if risk detected
 
 Options:
 
@@ -88,7 +88,7 @@ Prevents silent vertex data loss.
 
 Retention options:
 
-- Disabled
+- Disabled (Manual cleanup button in Debug foldout)
 - Keep 1
 - Keep 2
 - Keep 5
@@ -110,7 +110,7 @@ Cleanup:
 - Load across avatars
 - Share within projects
 
-### Deterministic Rebuild
+### Stable Rebuild
 
 Persist (Bake) always derives from backup, ensuring:
 

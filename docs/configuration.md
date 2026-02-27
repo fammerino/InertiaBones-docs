@@ -2,7 +2,7 @@
 
 ## UI Explanation
 
-![UI Screenshot](docs/assets/UIScreenshot.png)
+![UI Screenshot](assets/UIScreenshot.PNG)
 
 ### Header buttons:
 
@@ -16,6 +16,10 @@
 	- Category: Used for controlling influence sliders, should auto-detect most naming standard, if not then you can manually select it.
 	- Add Bone Slot / Remove: adds or removes slots from the Bone list
 	- Clear Empty Slots: Clears slots where Source Bone == None
+
+![Bones list](assets/Bones.PNG)
+
+^ Here you can see the typical behaviour of automatic category detection.
 
 ### Processing
 
@@ -85,7 +89,9 @@ This will apply the changes to a duplicated copy of your avatar, instead of appl
 Small foldout on the bottom of the UI for debugging or maintaining tool backup and similar.
 
 - **Clean Old Baked Meshes (Keep Last 2)**: will delete all GeneratedMeshes for the currently selected avatar so long as they are not in use (i.e not referenced by **any** SkinnedMeshRenderer) and older than 2.
-- **Repair Backup References (Resolve Missing SMRs)**: Will utilize several methods sequentially in an attempt to restore backup entries such as SkinnedMeshRenderer-paths and bone arrays.
+- **Repair Backup References (Resolve Missing SMRs)**: will utilize several methods sequentially in an attempt to restore backup entries such as SkinnedMeshRenderer-paths and bone arrays.
+- **Reveal Editor Data Root**: reveals the hidden _InertiaBonesEditorData object that holds backup entries, used for debugging purposes. (SMR, Original Mesh reference, Original Bones)
+- **Hide Editor Data Root**: Simply re-hides the object.
 
 !!! info
     Detailed info regarding the **Repair Backup References** button and its reason for existing is written in the **Known Issues** section.

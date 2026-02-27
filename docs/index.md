@@ -4,7 +4,7 @@ InertiaBones is a Unity Editor tool for VRChat avatars that allows you to create
 
 It features:
 
-- Deterministic PhysBone controller chain generation
+- Consistent and stable PhysBone controller chain generation
 - Safe SkinnedMeshRenderer weight rewriting
 - Session (non-destructive) iteration mode
 - Persistent mesh baking
@@ -12,6 +12,9 @@ It features:
 - Automatic baked mesh cleanup
 
 The tool is designed to serve as a framework for current and future methods included in the tool, so that you can easily add PhysBone dynamics wherever you want.
+
+!!! info
+	With a tool like this, and as this is the first release, there are likely edge-cases I haven't found yet. So remember to follow recommended workflows to minimize issues and if you find any bugs or similar, head to the **Contact** section to send me a bug-report!
 
 [Get started →](quick-start.md){ .md-button .md-button--primary }
 [Configuration →](configuration.md){ .md-button }
@@ -26,7 +29,7 @@ InertiaBones streamlines this entire workflow.
 
 It allows you to generate complex controller setups in seconds, iterate and tune them in a non-destructive environment, and only finalize your configuration once you are satisfied. When ready, you can bake the result into clean mesh assets so your avatar remains prefab-safe and export-ready.
 
-The tool is built with multiple guardrails to ensure deterministic behavior and safe experimentation, allowing you to explore advanced setups without risking mesh corruption or structural instability.
+The tool is built with multiple guardrails to ensure predictable behavior and safe experimentation, allowing you to explore advanced setups without risking mesh corruption or structural instability.
 
 The tool:
 

@@ -13,7 +13,7 @@ Yes.
 
 InertiaBones adds controller chains only to the bones you explicitly select and does not remove or overwrite existing PhysBone setups. Existing PhysBone components, constraints, and child chains remain intact.
 
-The tool has been tested on complex multi-bone thigh, belly, and butt rigs and integrates cleanly, often enhancing overall motion when tuned properly.
+The tool has been tested on complex multi-bone/multi-child thigh, belly, and butt rigs and integrates cleanly, often enhancing overall motion when tuned properly.
 
 Only the bones you choose to convert are affected.
 
@@ -36,14 +36,19 @@ Retention settings control cleanup.
 
 ---
 
-## What happens if I remove controllers after using Bake?
+## What happens if I unselect existing controllers (removing them from the Bones list) after baking and try to bake again?
 
-If removed controllers still influence vertex weights, a warning appears.
+If you previously baked with certain controllers enabled, and then deselect one or more of them before baking again, a warning will appear.
 
-You can:
-- Cancel
-- Scan & Fill existing controllers (Then **remove** properly)
-- Run Anyway
+This happens because those controllers may still influence vertex weights in the mesh. Deselecting them without proper handling could unintentionally remove their influence.
+
+You will be given three options:
+
+- Cancel – Stop and review your selection.
+- Scan & Fill – Resync the UI with the existing controllers. (Optionally add more if that was your intention)
+- Run Anyway – Continue intentionally and remove their influence during the new bake.
+
+This safeguard prevents accidental weight changes when modifying an already baked setup.
 
 ---
 
