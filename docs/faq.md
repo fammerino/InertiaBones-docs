@@ -27,6 +27,25 @@ This will remove all objects created by the tool, write weights back to the sour
 
 ---
 
+## "**'*MeshName*' has no bones assigned.**" when attempting to run **Apply**
+
+![Error screenshot](assets/bones.jpg)
+
+This is due to static meshes in the avatar hierarchy that don't have an armature/bones, which causes the tool to mistake them for an inelligible avatar or outfit rig. To fix this, simply move the static meshes out of the avatar hierarchy or remove them completely before re-running the **Apply**
+
+A solution to this quirk will come likely in the form of a foldout where you can manually exclude these sorts of meshes so the tool will *ignore* them when running apply.
+
+---
+
+## Why does "MA Scale Adjuster" revert scaling after applying?
+
+This is due to *MA Scale Adjuster* scaling based on weighted vertices attached to the bone the component is attached to, since InertiaBones rewrites weights, this will undo that scaling. You can work around this by moving the *MA Scale Adjuster* component to the **_Jiggle** bones.
+
+!!! Warning
+	Be aware that this goes against the recommended workflow and can in turn partially break the backup stored in the hidden **_InertiaBonesEditorData** object, so we recommend either having a backup copy of your avatar or using the **Create Upload Copy** option.
+
+---
+
 ## Can I run Persist (Bake) multiple times?
 
 Yes.  

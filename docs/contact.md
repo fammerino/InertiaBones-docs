@@ -17,8 +17,9 @@ When reporting a bug, please include:
 2. VRChat SDK version
 3. Steps to reproduce
 4. Whether you were in Session or Persist Mode
-5. Console errors (full text)
-6. Screenshot of the InertiaBones window
+5. Console errors (if there were any)
+6. Screenshot of the InertiaBones window (Optionally a screenshot of the avatar after applying)
+7. What other tools or systems does the avatar use?
 
 ### Recommended Format
 
