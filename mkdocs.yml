@@ -1,5 +1,6 @@
 site_name: InertiaBones
 site_description: Deterministic PhysBone controller generation and crash-safe mesh baking for VRChat avatars
+site_url: https://fammerino.github.io/InertiaBones-docs/
 repo_url: https://github.com/fammerino/InertiaBones-docs
 
 theme:
