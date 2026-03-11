@@ -7,6 +7,34 @@ Persist Mode never overwrites existing mesh assets.
 
 ---
 
+## Meshes on my avatar appear warped and/or distorted after applying the tool.
+
+This is likely due to a compatibility issue with an interfering tool/prefab on the avatar. Tools or similar that apply changes to meshes or in some cases the armature, on run-time or when uploading can and will in many cases mess with the tool.
+
+I currently have little conclusive evidence to point at this being a bug rooted inside of InertiaBones, and more-so due to an unpreferable sequence of changes made to the avatar with the help of tools / optimizers / certain gimmicks.
+
+!!! info
+	If you are experiencing similar issues, please head to the **Compatibility** tab, and follow the instructions there.
+[Compatibility →](compatibility.md){ .md-button .md-button--primary }
+
+## Meshes on my avatar disappear after using the tool.
+
+This usually means you have applied the tool using the **Session-Only mode** and then performed an action that calls a Scene-Refresh/-Reload/-Reset, which in turn *can* lose the converted meshes saved *in-memory*.
+
+This has been seen to happen due to following actions:
+
+	- Uploading the avatar
+	- Swapping scene
+	- Re-opening project
+	- Making the avatar into a prefab and moving it across scenes
+
+In the upcoming V1.1.0 version of InertiaBones, this behaviour has been altered slightly to be more resilient, alongside the fact that Unity will in some cases serialize the in-memory cloned meshes with the scene/prefab state, which allows them to persist in certain scenarios, but you should still bake your converted meshes.
+
+!!! Info
+	This can be fixed by using the tool to **Remove** and **Apply** the setup again to the avatar in question, make sure to use **Bake converted meshes as assets** if you want to prevent this from happening in the future.
+
+---
+
 ## Can I use this if I already have thigh / belly / butt PhysBones?
 
 Yes.
@@ -33,7 +61,7 @@ This will remove all objects created by the tool, write weights back to the sour
 
 This is due to static meshes in the avatar hierarchy that don't have an armature/bones, which causes the tool to mistake them for an inelligible avatar or outfit rig. To fix this, simply move the static meshes out of the avatar hierarchy or remove them completely before re-running the **Apply**
 
-A solution to this quirk will come likely in the form of a foldout where you can manually exclude these sorts of meshes so the tool will *ignore* them when running apply.
+A solution to this issue will come in the V1.1.0 update, where you will now be shown a dialog box listing any ineligible meshes for inspection, along with options to either **Skip and Continue** or **Cancel**.
 
 ---
 

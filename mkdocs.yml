@@ -34,6 +34,19 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ja
+          name: 日本語
+          build: true
+          
 extra:
   social:
     - icon: fontawesome/brands/x-twitter
@@ -45,6 +58,7 @@ nav:
   - Introduction: index.md
   - Quick Start: quick-start.md
   - Configuration: configuration.md
+  - Compatibility: compatibility.md
   - System Features: features.md
   - FAQ: faq.md
   - Known Issues: issues.md
