@@ -1,68 +1,48 @@
-# Quick Start
+# クイックスタート
 
-## 初めて使用する場合
+## 初回使用時の推奨事項
 
-初めて InertiaBones を使用する場合は、次のいずれかを推奨します：
+InertiaBonesを初めて使用する場合は、以下のいずれかを推奨します：
 
-- アバターを複製してから使用する  
-または
-- ツール UI の **Create Upload Copy** を有効にする
+- 使用前にアバターを**複製**しておく。
+- または、ツールUIの適用時に「**Create Upload Copy**」オプションを有効にする。
 
-新しいツールを既存のアバターに導入する場合、バックアップを作成しておくと安心して試すことができます。
+これは、新しい自動化ツールを既存のアバター設定に導入する際の優れたワークフロー慣行です。
 
-ワークフローに慣れてしまえば、この手順は通常不要になります。
+InertiaBonesは安定性とクラッシュ耐性を考慮して設計されていますが、初回使用時にバックアップを作成しておくことで、懸念なく挙動を確認し、自由に実験することができます。
 
----
-
-## Video Walkthrough
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/ysLpTjRzJb8?si=pwyRCc--5lvRZMwd" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+ワークフローに慣れた後は、通常この予防措置は不要になります。
 
 ---
 
-## Basic Setup
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/ysLpTjRzJb8?si=pwyRCc--5lvRZMwd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-1. Unity のアバタープロジェクトを開きます  
-2. Tools メニューから InertiaBones を開きます  
-3. アバターを **Avatar Root** にドラッグします  
-4. 揺れを追加したいボーンを **Source Bone** にドラッグします  
-5. プリセットを選択します  
-6. **Apply** をクリックし、Play Mode で動作を確認します  
-7. 設定を調整しながら満足するまで繰り返します  
-8. 設定が完成したら **Scan & Fill** を実行し、**Bake converted meshes as assets** を有効にします  
-9. **Apply** をクリックしてメッシュをアセットとして保存します  
+## 基本セットアップ
 
-これで完了です。
+1. Unityのアバタープロジェクトを開きます。
+2. Toolsメニューから「InertiaBones」を開きます。
+3. 変換したいアバターを「**Avatar Root**」にドラッグします。
+4. 変換したいボーンを「**Source Bone**」リストにドラッグします（例：太もも、胸など）。
+5. 内蔵プリセットを選択するか、独自の設定を作成します。
+6. 「**Apply**」をクリックし、プレイモードで結果を確認します。
+7. 納得がいくまで上記の手順を繰り返します。
+8. 満足したら、「**Scan & Fill**」を使用してすべてのコントローラーを対象にし、「**Bake converted meshes as assets**」をオンにします。
+9. 「**Apply**」をクリックして、メッシュをアセットとしてベイクします。これにより、プレハブとして安全になり、プロジェクトの再起動後も状態が維持されます。
+10. 完了です！
 
----
-
-!!! info
-    InertiaBones は **アバターアップロード前の最終工程** として使用することを想定しています。  
-    メッシュやアーマチュアを変更するツールは、InertiaBones を適用する前に使用してください。
+!!! info "情報"
+    InertiaBonesは、アップロード前の**最終工程**として使用することを想定しています。メッシュやアーマチュアに変更を加える他のツールを使用する場合は、InertiaBonesを適用する前にそれらのツールを使用してください。
 
 ---
 
-## Recommended Workflow
+## 推奨ワークフロー
 
-**調整中**
+**調整中：**
+- Sessionモード（セッションモード）を使用
+- 自由に反復調整
+- アセットを作成せずに設定を微調整
 
-- Session モードを使用
-- 自由に設定を変更
-- アセットは作成しない
-
-**設定完成後**
-
-- Bake モードに切り替え
-- 一度だけ Apply を実行
-- 古いメッシュは自動クリーンアップに任せる
-
----
-
-## Important Early Notes
-
-!!! warning
-    Persist モードでは新しいメッシュアセットが作成されます。  
-    既存のメッシュアセットは上書きされません。
-
-!!! info
-    Bake モードで既存コントローラーを外すと、ウェイト影響が残っている場合に警告が表示されます。
+**確定時：**
+- Bakeモード（ベイクモード）に切り替え
+- 1回「Apply」を実行してベイク
+- 古いバージョンはRetention（保持）設定による自動クリーンアップに任せる

@@ -1,46 +1,30 @@
-# Known Issues & Limitations
+# 既知の問題と制限事項
 
-## Known Issues
+## 既知の問題
 
-### Apply 後に Prefab を unpack する / Armature を変更する
+### 適用後にプレハブの展開やアーマチュアの改変を行う
+!!! warning "警告"
+    適用後にプレハブを展開（Unpack）したり、手動でアーマチュアを編集したりすることは避けてください。バックアップシステム内の参照が壊れる可能性があります。
 
-!!! warning
-    **Apply** 実行後のアバターに対して、Prefab の unpack や Armature の手動編集を行う場合は注意してください。
-
-過去のバージョンでは、Prefab を unpack すると  
-非表示オブジェクト **__InertiaBonesEditorData** に保存されたバックアップ参照が破損する場合がありました。
-
-現在は安全対策が追加されており、Debug / Maintenance 内の修復ボタンでバックアップを再構築できます。
-
-ただし、ツール適用後に Armature 構造を変更することは  
-基本的に想定されたワークフローではありません。
+もし参照が壊れた場合は、Debugフォールドアウトにある「**Repair Backup References**」ボタンを使用して修復を試みてください。
 
 ---
 
-## Known Limitations
+## 既知の制限事項
 
-### Converted Source Bone 下の PhysBone チェーン
-
-現在のバージョンでは、
-
-**InertiaBones の揺れは別の PhysBone チェーンには伝播しません。**
+### 変換されたソースボーンの子にあるPhysBoneチェーン
+現在のバージョンでは、InertiaBonesによる揺れは、そのボーンの子として配置されている別のPhysBoneチェーンには伝播しません。
 
 例：
-
-```
-Upperleg_R
+Upperleg_R (InertiaBones適用)
 ├── Lowerleg_R
-└── Belt_PB_R  <-- Has PhysBone
-    └── Belt_PB_001_R
-```
+└── Belt_PB_R (独自のPhysBone)
 
-この制限は将来のアップデートで改善予定です。
+この場合、`Upperleg_R`の揺れは`Belt_PB_R`には影響しません。これは将来のアップデートで改善予定です。
 
 ---
 
-!!! info
-    回避策として、PhysBone チェーンを対応する **_Jiggle** ボーンに親付けすることができます。
+### Persist（ベイク）モードでの反復編集
+ベイク済みアセットを使用している場合、段階的な編集（2個追加してベイク、後でさらに2個追加してベイク）は現在サポートされていません。
 
-!!! warning
-    この方法は推奨ワークフローではありません。  
-    使用する場合はアバターのバックアップを作成してください。
+一度にすべてのコントローラーを選択して適用するか、一度「Remove」してから新しい構成で適用し直すことを推奨します。

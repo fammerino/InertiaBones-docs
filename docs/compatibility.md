@@ -24,3 +24,35 @@ If you struggle with issues similar to; or listed above, please do the following
 
 !!! info
 	Regarding compatibility, the bottom line is most often to make sure you utilize any tools doing operations on mesh/armature **before** using InertiaBones.
+
+## Confirmed compatibility / specific workaround
+
+### Starmesh
+
+Currently only tested with *Starmesh RippleWave*, but presumably a fix that will work across the board.
+
+Prerequisites:
+
+- InertiaBones are applied with persistance mode (**Bake converted meshes as assets**)
+- You have a backup of your avatar (Not strictly required but definitely recommended)
+
+Optional order of operations:
+
+#### Option 1: Applying InertiaBones after StarMesh (typical workflow)
+
+1. Apply your InertiaBones setup as per usual (make sure **Bake converted meshes as assets** is enabled)
+2. Locate each of the *SkinnedMeshRenderers* that are listed in your **Starmesh Select Meshes** component.
+3. Change the mesh reference in the **Starmesh Original Mesh Data** component (**Original Mesh**) to match that of the SkinnedMeshRenderer's **Mesh** reference.
+4. Expected end-result, the two mesh references route back to the InertiaBones GeneratedMesh (see picture below)
+
+![Starmesh Component](assets/starmeshOriginalMesh.PNG)
+
+#### Option 2: Applying InertiaBones before StarMesh (non-typical workflow but seems to bypass the current issue without the need to change anything)
+
+1. Apply your InertiaBones setup as per usual (make sure **Bake converted meshes as assets** is enabled)
+2. Apply the Starmesh setup.
+3. Should work without any issues, as the **Starmesh Original Mesh Data** component should automatically target the InertiaBones GeneratedMeshes.
+
+### Modular Avatar Scale Adjuster
+
+Already listed in the FAQ with existing workaround, but aside from that, the upcoming V1.1.0 of InertiaBones will have a toggle specifically for moving affected *MA Scale Adjuster* components back and forth automatically when using the tool.

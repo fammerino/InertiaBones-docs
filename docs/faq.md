@@ -61,7 +61,10 @@ This will remove all objects created by the tool, write weights back to the sour
 
 This is due to static meshes in the avatar hierarchy that don't have an armature/bones, which causes the tool to mistake them for an inelligible avatar or outfit rig. To fix this, simply move the static meshes out of the avatar hierarchy or remove them completely before re-running the **Apply**
 
-A solution to this issue will come in the V1.1.0 update, where you will now be shown a dialog box listing any ineligible meshes for inspection, along with options to either **Skip and Continue** or **Cancel**.
+!!! info
+	A solution to this issue has been added in V1.1.0, with the following dialog box showing up if eligible:
+	![Unskinnable warning](assets/unskinnable.png)
+
 
 ---
 
@@ -69,8 +72,8 @@ A solution to this issue will come in the V1.1.0 update, where you will now be s
 
 This is due to *MA Scale Adjuster* scaling based on weighted vertices attached to the bone the component is attached to, since InertiaBones rewrites weights, this will undo that scaling. You can work around this by moving the *MA Scale Adjuster* component to the **_Jiggle** bones.
 
-!!! Warning
-	Be aware that this goes against the recommended workflow and can in turn partially break the backup stored in the hidden **_InertiaBonesEditorData** object, so we recommend either having a backup copy of your avatar or using the **Create Upload Copy** option.
+!!! info
+	Option **Move MA Scale Adjusters** has been added to automatically move these components in InertiaBones V1.1.0
 
 ---
 
