@@ -29,3 +29,10 @@ Alternatively just drop in the new .unitypackage and make sure that the import w
 - Added **Built In** sample preset for new features - *Rotational Standard Jiggle (V1.1.0 feature sample)*
 - Added heatmap preview for *Vertical Thigh Jiggle* and *Knee Exclusion*
 - Added scene refresh upon changing settings for better previewing experience
+
+#### 18.03.2026 InertiaBones v1.1.1 released.
+
+##### Bug fixes:
+
+- Fixed MA Scale Adjusters failing to maintain consistent scaling when used with **Knee exclusion** and / or **Vertical Thigh Jiggle** by duplicating them instead of explicitly moving.
+- Fixed a bug where vertical controllers (*VCTRL_*) would be created for unintended bones like *hips*, *butt* and other bones that were autodetected to **Upper Legs** category -> now detected as **Soft Tissue**
